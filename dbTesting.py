@@ -37,7 +37,6 @@ rows = execute_query("""
     LIMIT 10
 """)
 
-for row in rows:
-    print(row)
+print(len(row), row)
 
 # TODO: Exercise 1 — modify the query above to also return the Milliseconds column
