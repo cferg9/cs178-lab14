@@ -30,14 +30,8 @@ def execute_query(query, args=()):
 # ---------------------------------------------------------------------------
 
 
-    rows = execute_query("""
-    SELECT Track.Name, Track.Milliseconds
-    FROM Track
-    LIMIT 5
-""")
-
+  rows = execute_query("PRAGMA table_info(Track);")
 for row in rows:
-    print(row
-)
+    print(row)
 
 # TODO: Exercise 1 — modify the query above to also return the Milliseconds column
