@@ -30,10 +30,10 @@ def execute_query(query, args=()):
 # ---------------------------------------------------------------------------
 
 rows = execute_query("""
-    SELECT ArtistId, Artist.Name, Track.Name, UnitPrice, Milliseconds
+    SELECT Artist.ArtistId, Artist.Name, Track.Name, Track.UnitPrice, Track.Milliseconds
     FROM Artist
-    JOIN Album USING (ArtistID)
-    JOIN Track USING (AlbumID)
+    JOIN Album ON Artist.ArtistId = Album.ArtistId
+    JOIN Track ON Album.AlbumId = Track.AlbumId
     LIMIT 10
 """)
 
