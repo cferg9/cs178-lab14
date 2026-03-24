@@ -29,13 +29,13 @@ def execute_query(query, args=()):
 #   python3 dbTesting.py
 # ---------------------------------------------------------------------------
 
-rows = execute_query("""
+rows = execute_query(
     SELECT Artist.ArtistId, Artist.Name, Track.Name, Track.UnitPrice, Track.Milliseconds
     FROM Artist
     JOIN Album ON Artist.ArtistId = Album.ArtistId
     JOIN Track ON Album.AlbumId = Track.AlbumId
     LIMIT 10
-""")
+)
 
 for row in rows:
     print(row[0], row[1], row[2], row[3], row[4])
