@@ -29,8 +29,14 @@ def execute_query(query, args=()):
 #   python3 dbTesting.py
 # ---------------------------------------------------------------------------
 
+rows = execute_query(
+    SELECT Artist.ArtistId, Artist.Name, Track.Name, Track.UnitPrice, Track.Milliseconds
+    FROM Artist
+    JOIN Album ON Artist.ArtistId = Album.ArtistId
+    JOIN Track ON Album.AlbumId = Track.AlbumId
+    LIMIT 10
+)
 
-  rows = execute_query("PRAGMA table_info(Track);")
 for row in rows:
     print(row)
 
