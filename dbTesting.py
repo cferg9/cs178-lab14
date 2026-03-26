@@ -36,8 +36,8 @@ rows = execute_query("""
     JOIN Track ON Album.AlbumId = Track.AlbumId
     LIMIT 10
 """)
-
-for row in rows:
-    print(row[0], row[1], row[2], row[3], row[4])
+print(rows)
+#for row in rows:
+   # print(row[0], row[1], row[2], row[3], row[4])
 
 # TODO: Exercise 1 — modify the query above to also return the Milliseconds column
