@@ -1,0 +1,20 @@
+<h1>Search Tracks by Length</h1>
+
+<form method="POST" action="/timequerytextbox">
+    <label>Enter milliseconds:</label>
+    <input type="number" name="milliseconds" required>
+    <button type="submit">Search</button>
+</form>
+
+<hr>
+
+{% if rows %}
+    <h2>Tracks longer than {{ milliseconds }} ms</h2>
+    <ul>
+    {% for row in rows %}
+        <li>
+            {{ row[0] }} - {{ row[1] }} ({{ row[2] }}) - {{ row[3] }} ms
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
